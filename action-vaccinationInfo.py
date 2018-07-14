@@ -49,7 +49,7 @@ def action_wrapper(hermes, intentMessage, conf):
             PARAMS = {'name':disease}
             response = requests.get(url = URL, params = PARAMS)
             result = response.text.encode('ascii')
-            hermes.publish_end_session(intentMessage.session_id, response.text)
+            hermes.publish_end_session(intentMessage.session_id, "I want to test this if this works")
         except:
             print "Unexpected error:", sys.exc_info()[0]
             hermes.publish_end_session(intentMessage.session_id, "An error occured")
